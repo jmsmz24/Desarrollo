@@ -9,7 +9,11 @@ lyr  = iface.activeLayer()
 lyr.name()
 lyr.extent()
 lyr.crs()
+lyr.dataProvider().storageType ()
 lyr.dataProvider().dataSourceUri()
+lyr.dataProvider().metadata()
+lyr.dataProvider().wkbType()
+
 
 
 #Obtener todas las entidades con un iterador y guardarlo en una variable llamada features
@@ -47,4 +51,4 @@ sum([f ["area_ha"] for f in iface.activeLayer().getFeatures() if f["ccaa_n_enp"]
 
 
 #Abrir capa
-689110039 - 
+
