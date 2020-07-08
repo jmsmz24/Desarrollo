@@ -21,7 +21,7 @@ features = lyr.getFeatures()
 features_list = list(features)
 
 #¿Cuantas entidades tenemos?
-len(features)
+len(features_list)
 
 #Obtener el primer elemento de la lista y guardarlo en una variable llamada feature
 feature = features_list[0]
