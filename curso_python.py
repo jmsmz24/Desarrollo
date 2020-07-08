@@ -9,11 +9,10 @@ lyr  = iface.activeLayer()
 lyr.name()
 lyr.extent()
 lyr.crs()
-lyr.dataProvider().storageType ()
+lyr.dataProvider().storageType()
 lyr.dataProvider().dataSourceUri()
 lyr.dataProvider().metadata()
 lyr.dataProvider().wkbType()
-
 
 
 #Obtener todas las entidades con un iterador y guardarlo en una variable llamada features
