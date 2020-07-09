@@ -1,5 +1,20 @@
 #1 PRINCIPIOS BÁSICOS PyQGIS
-#1.1.EXPLORAR CAPA VECTORIAL
+#1.1. EXPLORAR PROYECTOS QGZ
+#------------------------------------------------------------------------------
+
+#Instancia de QgsProject y guardamos en variable project
+project = QgsProject.instance()
+
+#Caracteristicas del proyecto
+project.absoluteFilePath()
+project.absolutePath()
+project.baseName()
+project.count()
+project.crs()
+project.distanceUnits()
+project.areaUnits()
+
+#1.2.EXPLORAR CAPA VECTORIAL
 #------------------------------------------------------------------------------
 
 #Llamar a la capa activa y gardarlo en una variable llamada lyr 
