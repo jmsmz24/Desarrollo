@@ -14,6 +14,13 @@ project.crs()
 project.distanceUnits()
 project.areaUnits()
 
+#Cargar un proyecto
+project.read('C:\ISM_PyQGIS\01_project.qgs')
+
+#Guardar un proyecto
+project.write('C:\ISM_PyQGIS\01_project_v2.qgs')
+
+
 #1.2.EXPLORAR CAPA VECTORIAL
 #------------------------------------------------------------------------------
 
