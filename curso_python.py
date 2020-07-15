@@ -15,10 +15,10 @@ project.distanceUnits()
 project.areaUnits()
 
 #Cargar un proyecto
-project.read('C:\ISM_PyQGIS\01_project.qgs')
+project.read('C:\\ISM_PyQGIS\\01_project.qgs')
 
 #Guardar un proyecto
-project.write('C:\ISM_PyQGIS\01_project_v2.qgs')
+project.write('C:\\ISM_PyQGIS\\01_project_v2.qgs')
 
 
 #1.2.EXPLORAR CAPA VECTORIAL
@@ -40,13 +40,13 @@ lyr.dataProvider().wkbType()
 features = lyr.getFeatures()
 
 #Convertit en lista la variable features
-features_list = list(features)
+features = list(features)
 
 #¿Cuantas entidades tenemos?
-len(features_list)
+len(features)
 
 #Obtener el primer elemento de la lista y guardarlo en una variable llamada feature
-feature = features_list[0]
+feature = features[0]
 
 #Obtener el nombre de la entidad guardada en la variable feature accedendio a su atributo en el campo XXXX
 feature ["sitename"]
@@ -55,14 +55,14 @@ feature ["sitename"]
 feature.geometry()
 
 #Listado de todss las entidades por el campo XXXX
-[f ["sitename"] for f in features_list]
+[feature ["sitename"] for feature in features]
 
 #Listado de la geometry de todos las entidades
-[f.geometry() for f in features_list]
+[feature.geometry() for feature in features]
 
 #Suma del area de todas las entidades
-sum([f ["area_ha"] for f in features_list])
+sum([feature ["area_ha"] for feature in features])
 
 #Suma del area de todas las entidades filtrado a traves de dos métodos
-sum([f ["area_ha"] for f in iface.activeLayer().getFeatures('"ccaa_n_enp"=\'Extremadura\'')]) #Ejemplo bueno
-sum([f ["area_ha"] for f in iface.activeLayer().getFeatures() if f["ccaa_n_enp"]== "Extremadura"]) #Ejemplo malo
+sum([feature ["area_ha"] for feature in iface.activeLayer().getFeatures('"ccaa_n_enp"=\'Extremadura\'')]) #Ejemplo bueno
+sum([feature ["area_ha"] for feature in iface.activeLayer().getFeatures() if f["ccaa_n_enp"]== "Extremadura"]) #Ejemplo malo
