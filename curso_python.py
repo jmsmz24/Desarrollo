@@ -61,8 +61,15 @@ feature.geometry()
 [feature.geometry() for feature in features]
 
 #Suma del area de todas las entidades
-sum([feature ["area_ha"] for feature in features])
+sum([feature ["area"] for feature in features])
+
+#Estadíaticos de las entidades
+mean([feature ["area"] for feature in features])
+stdev ([feature ["area"] for feature in features])
+max ([feature ["area"] for feature in features])
+min ([feature ["area"] for feature in features])
+median ([feature ["area"] for feature in features])
 
 #Suma del area de todas las entidades filtrado a traves de dos métodos
-sum([feature ["area_ha"] for feature in iface.activeLayer().getFeatures('"ccaa_n_enp"=\'Extremadura\'')]) #Ejemplo bueno
-sum([feature ["area_ha"] for feature in iface.activeLayer().getFeatures() if f["ccaa_n_enp"]== "Extremadura"]) #Ejemplo malo
+sum([feature ["area"] for feature in iface.activeLayer().getFeatures('"ccaa_n_enp"=\'Extremadura\'')]) #Ejemplo bueno
+sum([feature ["area"] for feature in features if feature["NAME_1"]== "Castilla y León"])#Ejemplo malo
