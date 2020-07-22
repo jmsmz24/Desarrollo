@@ -71,5 +71,5 @@ min ([feature ["area"] for feature in features])
 median ([feature ["area"] for feature in features])
 
 #Suma del area de todas las entidades filtrado a traves de dos métodos
-sum([feature ["area"] for feature in iface.activeLayer().getFeatures('"ccaa_n_enp"=\'Extremadura\'')]) #Ejemplo bueno
+sum([feature ["area"] for feature in iface.activeLayer().getFeatures('"NAME_1"=\'Castilla y León\'')])#Ejemplo bueno
 sum([feature ["area"] for feature in features if feature["NAME_1"]== "Castilla y León"])#Ejemplo malo
