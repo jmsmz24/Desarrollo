@@ -1,7 +1,3 @@
-#1 PRINCIPIOS BÁSICOS PyQGIS
-#1.1. EXPLORAR PROYECTOS QGZ
-#------------------------------------------------------------------------------
-
 #Instancia de QgsProject y guardamos en variable project
 project = QgsProject.instance()
 
@@ -19,10 +15,6 @@ project.read('C:\\ISM_PyQGIS\\01_project.qgs')
 
 #Guardar un proyecto
 project.write('C:\\ISM_PyQGIS\\01_project_v2.qgs')
-
-
-#1.2.EXPLORAR CAPA VECTORIAL
-#------------------------------------------------------------------------------
 
 #Llamar a la capa activa y gardarlo en una variable llamada lyr 
 lyr  = iface.activeLayer()
@@ -73,3 +65,26 @@ median ([feature ["area"] for feature in features])
 #Suma del area de todas las entidades filtrado a traves de dos métodos
 sum([feature ["area"] for feature in iface.activeLayer().getFeatures('"NAME_1"=\'Castilla y León\'')])#Ejemplo bueno
 sum([feature ["area"] for feature in features if feature["NAME_1"]== "Castilla y León"])#Ejemplo malo
+
+#Crear capa de tipo punto y WGS84 llamada layer en memoria virtual
+layer = QgsVectorLayer("Point?crs=ESPG:4326","capa","memory")
+
+#Creamos objeto de tipo campo
+field = QgsField("id", QVariant.String)
+
+#Insertamos campo en capa layer
+layer.dataProvider().addAttributes([field])
+
+#Acualizamos campos
+layer.updateFields()
+
+feature = QgsFeature()
+feature.setFields(layer.fields())
+feature.setAttribute("id","1")
+feature ["id"]
+
+point = QgsPointXY(-3.70256, 40.4165)
+geom = QgsGeometry.fromPointXY(point)
+feature.setGeometry(geom)
+layer.dataProvider().addFeatures([feature])
+

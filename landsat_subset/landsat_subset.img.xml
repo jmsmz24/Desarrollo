@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="es"><Esri><CreaDate>20130625</CreaDate><CreaTime>10005500</CreaTime><ArcGISFormat>1.0</ArcGISFormat><ArcGISstyle>INSPIRE Metadata Directive</ArcGISstyle><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="C:\Program Files (x86)\ArcGIS\Desktop10.0\ArcToolbox\Toolboxes\Spatial Analyst Tools.tbx\ExtractByMask" Date="20130625" Time="100055">ExtractByMask ortho_200_34_ms.img landsat8_subset.img C:\Users\egil\Desktop\CLASIFICACION\landsat_subset.img</Process></lineage></DataProperties></Esri></metadata>
