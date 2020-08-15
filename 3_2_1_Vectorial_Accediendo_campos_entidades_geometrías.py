@@ -63,7 +63,6 @@ feature.geometry()
 sum([feature ["area"] for feature in features])
 
 #Estadíaticos de las entidades
-
 print(mean([feature ["area"] for feature in features]))
 stdev ([feature ["area"] for feature in features])
 max ([feature ["area"] for feature in features])
