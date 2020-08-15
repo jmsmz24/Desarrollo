@@ -3,12 +3,13 @@
 #3.2.1. Vectorial: Accediendo campos entidades geometrías
 ####################################################################################################
 
+from statistics import *
 
 #Instancia de QgsProject y guardamos en variable project
 project = QgsProject.instance()
 
 #Caracteristicas del proyecto
-project.absoluteFilePath()
+print(project.absoluteFilePath())
 project.absolutePath()
 project.baseName()
 project.count()
@@ -47,13 +48,13 @@ len(features)
 feature = features[0]
 
 #Obtener el nombre de la entidad guardada en la variable feature accedendio a su atributo en el campo XXXX
-feature ["sitename"]
+feature ["NAME_2"]
 
 #Obtener la geometria de las entidad guardada en la variable feature
 feature.geometry()
 
 #Listado de todss las entidades por el campo XXXX
-[feature ["sitename"] for feature in features]
+[feature ["NAME_2"] for feature in features]
 
 #Listado de la geometry de todos las entidades
 [feature.geometry() for feature in features]
@@ -62,7 +63,10 @@ feature.geometry()
 sum([feature ["area"] for feature in features])
 
 #Estadíaticos de las entidades
-mean([feature ["area"] for feature in features])
+
+
+
+print(mean([feature ["area"] for feature in features]))
 stdev ([feature ["area"] for feature in features])
 max ([feature ["area"] for feature in features])
 min ([feature ["area"] for feature in features])
