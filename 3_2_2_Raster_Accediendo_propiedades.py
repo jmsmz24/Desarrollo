@@ -7,39 +7,39 @@
 raster = iface.activeLayer()
 
 #Nombre de la capa en QGIS: 
-raster.name()
+print(raster.name())
 
 #Extent de la capa: 
-raster.extent()
+print(raster.extent())
 
 #Sistema de coordenadas: 
-raster.crs()
+print(raster.crs())
 
 #Dimensiones del ráster en pixeles:
-raster.width()
-raster.height()
+print(raster.width())
+print(raster.height())
 
 #Número de bandas: 
-raster.bandCount()
+print(raster.bandCount())
 
 #Tipo de raster: 
-raster.rasterType() 
+print(raster.rasterType()) 
 
 #Metadatos
-raster.metadata()
+print(raster.metadata())
 
 #Acceso a estadisticas con objeto de tipo QgsRasterDataProvider y los guardamos en una variable llamada provider. 
 provider = raster.dataProvider()
 stats = provider.bandStatistics(1, QgsRasterBandStats.All)
 
 #Acceso a estadísticas utilizando la variable stats.
-stats.minimumValue
-stats.minimumValue
-stats.mean
-stats.range
-stats.stdDev
-stats.sum
-stats.sumOfSquares
+print(stats.minimumValue)
+print(stats.minimumValue)
+print(stats.mean)
+print(stats.range)
+print(stats.stdDev)
+print(stats.sum)
+print(stats.sumOfSquares)
 
 
 
