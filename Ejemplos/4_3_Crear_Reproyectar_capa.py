@@ -1,4 +1,4 @@
-#Ejercicio 4.3. Creaar y Reproyectar capa puntos
+#Ejemplo 4.3. Crear y Reproyectar capa puntos
 
 #Capa de entrada con el CRS de partida
 layer = QgsVectorLayer("Point?crs=EPSG:4326","capa_entrada","memory")
