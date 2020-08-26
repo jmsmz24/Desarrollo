@@ -21,3 +21,6 @@ layer.selectByExpression('"POP_EST" >50000000 AND ')
 selection = layer.selectedFeatures()
 for feature in selection:
     print(feature ["ADMIN"] )
+
+#Realizar filtrado de entidades a mostrar
+layer.setSubsetString('"CONTINENT" =\'Europe\'')
