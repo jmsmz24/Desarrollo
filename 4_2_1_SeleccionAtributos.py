@@ -15,4 +15,9 @@ layer.select(selectid)
 
 #Seleccionar según los valores de los atributos con el método selectByExpression de la clase QgsVectorLayer
 layer.selectByExpression('"CONTINENT" =\'Europe\'')
-layer.selectByExpression('"POP_EST" >50000000')
+layer.selectByExpression('"POP_EST" >50000000 AND ')
+
+#Iterar a través de esas entidades seleccionadas.
+selection = layer.selectedFeatures()
+for feature in selection:
+    print(feature ["ADMIN"] )
