@@ -2,20 +2,14 @@
 from sentinelsat import SentinelAPI, read_geojson, geojson_to_wkt
 from datetime import date
 
-#user = QInputDialog().getText(None, "User", "User please:")
-#password = QInputDialog().getText(None, "Password", "Password please:")
-
-user = 'josem.sanchezm'
-password = 'JMSMjmsm2412'
+user = QInputDialog().getText(None, "User", "User please:")
+password = QInputDialog().getText(None, "Password", "Password please:")
 
 api = SentinelAPI(user, password, 'https://scihub.copernicus.eu/dhus')
 
-lyr  = iface.activeLayer()
-#lyr.setSubsetString('"iata_code" =\'TXL\'')
-features = list(lyr.getFeatures())
-feature = features[0]
-geom = feature.geometry().asWkt()
-print(geom)
+
+point = QgsPointXY(-3.70256, 40.4165)
+geom = QgsGeometry.fromPointXY(point) 
 
 products = api.query(geom, platformname = 'Sentinel-2', cloudcoverpercentage = (0, 25),producttype='S2MSI1C',beginPosition='[2020-01-01T00:00:00.000Z TO 2020-02-01T23:59:59.999Z]')
 json = api.to_geojson(products)
