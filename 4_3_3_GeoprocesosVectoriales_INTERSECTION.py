@@ -4,14 +4,14 @@
 ##################################################
 
 #Llamamos a la capa de puntos.
-point = QgsProject.instance().mapLayersByName("ne_10m_airports")[0] 
+input = QgsProject.instance().mapLayersByName("ne_50m_urban_areas")[0] 
 
 #Llamamos a la capa de poligonos
-polygon = QgsProject.instance().mapLayersByName("ne_110m_admin_0_countries")[0] 
+overlay = QgsProject.instance().mapLayersByName("ne_50m_admin_0_countries")[0] 
 
 parameter_dictionary = {
-    'INPUT': point,
-    'OVERLAY': polygon,
+    'INPUT': input,
+    'OVERLAY': overlay,
     'INPUT_FIELDS': '',
     'OVERLAY_FIELDS': '',
     'OVERLAY_FIELDS_PREFIX': '',
